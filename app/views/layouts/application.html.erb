@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WhateverTheWeather</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<% if @weather_words == "Clear" %>
+	<body id="clear">
+<% elsif @weather_words == "Light Rain" %>
+	<body id="rain">
+<% elsif @weather_words == "Cloudy" || @weather_words == "Mostly Cloudy" %>
+	<body id="cloudy">
+<% else %>
+	<body>
+<% end %>
+
+	<div class="container">
+		<%= yield %>
+	</div>
+</body>
+</html>
