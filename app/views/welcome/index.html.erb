@@ -32,29 +32,29 @@
 	</div>
 </div>
 
-<% if @location != nil %>
+<% if @results != nil %>
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
 		<div class="well">
 
-			<h1>Forecast for <%= @location %></h1>
+			<h1>Forecast for <%= @results[:location] %></h1>
 
 				<div class="row">
 					<div class="col-md-7">
 						<p><em>What's the weather like?</em></p>
 						<p>
-							Temperature is: <%= @temp_f %>&deg; / <%= @temp_c %>&deg; 
+							Temperature is: <%= @results[:temp_f] %>&deg; / <%= @results[:temp_c] %>&deg; 
 						</p>
 						<p>
-							Feels like: <%= @real_feel %>&deg;
+							Feels like: <%= @results[:real_feel] %>&deg;
 						</p>
 					</div>
 					<div class="col-md-5">
 						<p>
-							<%= @weather_words %> <%= image_tag @weather_icon %>
+							<%= @results[:weather_words] %> <%= image_tag @results[:weather_icon] %>
 						</p>
 						<p>
-							<%= link_to "Full Forecast", @forecast_link, target: "_blank" %>
+							<%= link_to "Full Forecast", @results[:forecast_link], target: "_blank" %>
 						</p>
 					</div>
 				</div>
