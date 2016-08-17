@@ -64,3 +64,8 @@
 </div>
 
 <% end %>
+<% if @notice != nil %>
+	<div class="alert alert-danger" role="alert">
+		<%= @notice %>
+	</div>
+<% end %>
